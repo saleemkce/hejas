@@ -10,9 +10,7 @@ const awesomeFunction = () => 'I am just an Awesome Function';
  * @param {*} a parameter 1 for add function
  * @param {*} b parameter 2 for add function
  */
-const _add = (a, b) => {
-  return (a + b);
-};
+const add = (a, b) => (a + b);
 
 /**
  * function for subtract operation
@@ -20,28 +18,22 @@ const _add = (a, b) => {
  * @param {*} b parameter 2 for subtract function
  * note: It will not return back negative values forever.....
  */
-const _subtract = (a, b) => {
+const subtract = function (a, b) {
   if (typeof a !== 'number' || typeof b !== 'number') {
-    throw new Error('Input is not a number');
+    return 'Input is not number';
   }
   const arr = [a, b];
-  const max = arr.reduce(function(a, b) { return Math.max(a, b); });
-  const min = arr.reduce(function(a, b) { return Math.min(a, b); });
+  const max = arr.reduce((_a, _b) => Math.max(_a, _b));
+  const min = arr.reduce((_a1, _b1) => Math.min(_a1, _b1));
   return (max - min);
 };
 
-const _multiply = (a, b) => {
-  return (a * b);
-};
+const multiply = (a, b) => (a * b);
 
-const _divide = (a, b) => {
-  return (a / b);
-};
+const divide = (a, b) => (a / b);
 
-const _modulo = (a, b) => {
-  return (a % b);
-};
+const modulo = (a, b) => (a % b);
 
 export default defaultAwesomeFunction;
 
-export { awesomeFunction, _add, _subtract, _divide, _multiply, _modulo };
+export { awesomeFunction, add, subtract, divide, multiply, modulo };

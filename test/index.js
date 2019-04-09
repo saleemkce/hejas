@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import defaultAwesomeFunction, { awesomeFunction, _add, _subtract, _multiply, _divide, _modulo } from '../src';
+import defaultAwesomeFunction, { awesomeFunction, add, subtract, multiply, divide, modulo } from '../src';
 
 describe('Awesome test.', () => {
   it('should test default awesome function', () => {
@@ -14,11 +14,28 @@ describe('Awesome test.', () => {
 
   it('should test add function', () => {
     const expectedVal = 20;
-    assert(_add(10, 10) === expectedVal, '* add funtcion :(');
+    assert(add(10, 10) === expectedVal, '* add funtcion :(');
   });
 
   it('should test subtract function', () => {
     const expectedVal = 5;
-    assert(_subtract(5, 10) === expectedVal, '* subtract function :(');
+    const invalidInput = 'Input is not number';
+    assert(subtract('test', 'well') === invalidInput, '* subtract function check invalid input :(');
+    assert(subtract(5, 10) === expectedVal, '* subtract function success :(');
+  });
+
+  it('should test multiply function', () => {
+    const expectedVal = 100;
+    assert(multiply(10, 10) === expectedVal, '* multiply funtcion :(');
+  });
+
+  it('should test divide function', () => {
+    const expectedVal = 10;
+    assert(divide(100, 10) === expectedVal, '* divide funtcion :(');
+  });
+
+  it('should test modulo function', () => {
+    const expectedVal = 0;
+    assert(modulo(100, 5) === expectedVal, '* modulo funtcion :(');
   });
 });

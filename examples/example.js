@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const defaultAwesomeFunction = require('../lib').default;
-const { awesomeFunction, adder } = require('../lib');
+const { awesomeFunction, _add } = require('../lib');
 
 const defaultVal = defaultAwesomeFunction('Dinesh');
 const val = awesomeFunction();
@@ -10,4 +10,4 @@ console.log(defaultVal);
 // val === 'I am just an Awesome Function'
 console.log(val);
 
-console.log(adder());
+console.log('Addition of (10, 10) is : ' + _add(10,10));
